@@ -87,29 +87,35 @@ class SupabaseStorageManager {
         
         item.id = item.id || generateId();
 
-        // ✅ Save locally first always
-        const localResult = storage.add(collection, item);
-
         if (this.isOnline) {
             try {
-                // ✅ Remove all problematic fields automatically
+                // ✅ SAVE TO CLOUD FIRST - THIS IS THE FIX
                 const cleanItem = {...item};
-                delete cleanItem.createdAt;
-                delete cleanItem.updatedAt;
-                delete cleanItem._deleted;
-
+                
                 const { data, error } = await this.client
                     .from(collection)
                     .insert(cleanItem)
                     .select()
                     .single();
                 
-                if (!error) {
+                if (!error && data) {
+                    // ✅ Then save locally after cloud success
+                    storage.add(collection, data);
+                    console.log(`✅ ${collection} saved to cloud successfully`);
                     return data;
                 }
-            } catch (e) {}
+                
+                if (error) {
+                    console.error(`❌ Cloud save failed:`, error);
+                    throw error;
+                }
+            } catch (e) {
+                console.warn(`⚠️ Cloud save failed, falling back to local only`);
+            }
         }
         
+        // Fallback to local only if offline
+        const localResult = storage.add(collection, item);
         return localResult;
     }
 
