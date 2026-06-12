@@ -1,0 +1,83 @@
+/*
+    School Management System - Dashboard Styles
+    Statistics cards, dashboard specific styles
+*/
+
+/* Statistics Cards */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card p {
+    margin-bottom: 0;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.stat-card i {
+    font-size: 3.5rem;
+}
+
+/* Dashboard Charts Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* Recent Activities */
+.activity-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s;
+}
+
+.activity-item:hover {
+    background-color: rgba(13, 110, 253, 0.03);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-content p {
+    margin-bottom: 0.25rem;
+}
+
+.activity-content small {
+    color: #6c757d;
+}
