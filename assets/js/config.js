@@ -11,8 +11,8 @@ const SMS_CONFIG = {
     // Supabase Cloud Database Configuration
     // Add your credentials here to enable multi-user sync
     supabase: {
-        url: 'https://cuzxjlxttxghiepudfbz.supabase.co',
-        apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1enhqbHh0dHhnaGllcHVkZmJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyNTE3NzcsImV4cCI6MjA5NjgyNzc3N30.rdRQN7l76QT2eHJqsKdi7s43IRyt_jh0QFVkUd7PBz8'
+        url: 'https://ytsbpnxbxhmuttodiqig.supabase.co',
+        apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0c2JwbnhieGhtdXR0b2RpcWlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEyOTU4MTMsImV4cCI6MjA5Njg3MTgxM30.LZWgYeqen66ODoTkGq2ReHSWauga0lLYkY1dagw2zVQ'
     },
     
     // Default data
